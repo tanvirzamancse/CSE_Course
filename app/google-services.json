@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "123568890520",
+    "firebase_url": "https://cse-course-cb1d7.firebaseio.com",
+    "project_id": "cse-course-cb1d7",
+    "storage_bucket": "cse-course-cb1d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123568890520:android:8346809633caa6f1e2a6ed",
+        "android_client_info": {
+          "package_name": "com.example.cse_course"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123568890520-pc14hfrjp4546h8lqgus1m15re9dobki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIYIjXBS3EHLbitohZrLFnb-NaSaMY18Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123568890520-pc14hfrjp4546h8lqgus1m15re9dobki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

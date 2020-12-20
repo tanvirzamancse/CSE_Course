@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5sp"
+    app:cardCornerRadius="15sp">
+    <TextView
+        android:id="@+id/row_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tanvir"
+        android:textSize="15sp"
+        android:padding="10sp"
+        android:layout_marginStart="20sp"
+        android:textColor="#000000"
+        />
+</androidx.cardview.widget.CardView>

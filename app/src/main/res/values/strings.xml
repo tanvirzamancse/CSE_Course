@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">CSE_Course</string>
+    <string name="marque">Department of computer science and engineering</string>
+    <string name="if_you_do_not_sin_up_then_click">If you do not sin up then click</string>
+    <string name="if_you_are_registered_then_click">If you are registered then click!!</string>
+    <string name="login">Login</string>
+    <string name="sinup">Sinup</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="home">Home</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="daffodil_international_university">Daffodil International University</string>
+    <string name="app_developer_tanvir_zaman_prince">App Developer : Tanvir Zaman Prince</string>
+    <string name="about">About</string>
+    <string name="contract">Contract</string>
+    <string name="share">Share</string>
+    <string name="rating">Rating</string>
+    <string name="rate_us">Rate us</string>
+    <string name="semister_name">Semister Name</string>
+    <string-array name="semister">
+        <item>L1T1</item>
+        <item>L1T2</item>
+        <item>L1T3</item>
+        <item>L2T1</item>
+        <item>L2T2</item>
+        <item>L2T3</item>
+        <item>L3T1</item>
+        <item>L3T2</item>
+        <item>L3T3</item>
+        <item>L4T1</item>
+        <item>L4T2</item>
+        <item>L4T3</item>
+    </string-array>
+    <string-array name="Course">
+        <item>CSE123</item>
+        <item>CSE234</item>
+        <item>CSE345</item>
+        <item>CSE456</item>
+        <item>CSE678</item>
+        <item>CSE891</item>
+        <item>CSE912</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tanvir">Tanvir</string>
+
+
+</resources>
