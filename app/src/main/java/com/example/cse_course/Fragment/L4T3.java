@@ -20,7 +20,8 @@ import com.example.cse_course.HomePage;
 import com.example.cse_course.R;
 
 public class L4T3 extends Fragment {
-    final String[] Word={"CSE123:sadhjsdhsd","CSE234:dsfjkdfjkf","CSE:sdfjdsf","CSE:sdfjsdfhf",};
+    final String[] Code={"CSE131","CSE133","CSE212","CSE221"};
+    final String[] Title={"Discrete Mathematics","Data Structures","Digital Logic","Theory Computing"};
     ImageView imageView;
     GridView gridView;
 
@@ -44,7 +45,7 @@ public class L4T3 extends Fragment {
     private class CustomAdapter  extends BaseAdapter {
         @Override
         public int getCount() {
-            return Word.length;
+            return Code.length;
         }
 
         @Override
@@ -53,15 +54,18 @@ public class L4T3 extends Fragment {
         }
 
         @Override
-        public long getItemId(int position) {
+        public long getItemId(int position)
+        {
             return 0;
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view1= getLayoutInflater().inflate(R.layout.simple_row,null);
-            TextView textView=view1.findViewById(R.id.row_ID);
-            textView.setText(Word[position]);
+            TextView textView1=view1.findViewById(R.id.row1_ID);
+            TextView textView2=view1.findViewById(R.id.row2_ID);
+            textView1.setText(Code[position]);
+            textView2.setText(Title[position]);
             return view1;
         }
     }

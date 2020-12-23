@@ -24,8 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class L1T1 extends Fragment{
-    final String[] Word={"CSE131:Discrete Mathematics","CSE133:Data Structures " +
-            "with Lab","CSE212:Digital Logic Design with Lab","CSE221:Theory of Computing",};
+    final String[] Code={"CSE131","CSE133","CSE212","CSE221"};
+    final String[] Title={"Discrete Mathematics","Data Structures","Digital Logic","Theory Computing"};
     ImageView imageView;
     GridView gridView;
 
@@ -58,7 +58,7 @@ public class L1T1 extends Fragment{
     private class CustomAdapter  extends BaseAdapter {
         @Override
         public int getCount() {
-            return Word.length;
+            return Code.length;
         }
 
         @Override
@@ -74,8 +74,10 @@ public class L1T1 extends Fragment{
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view1= getLayoutInflater().inflate(R.layout.simple_row,null);
-            TextView textView=view1.findViewById(R.id.row_ID);
-            textView.setText(Word[position]);
+            TextView textView1=view1.findViewById(R.id.row1_ID);
+            TextView textView2=view1.findViewById(R.id.row2_ID);
+            textView1.setText(Code[position]);
+            textView2.setText(Title[position]);
             return view1;
         }
     }

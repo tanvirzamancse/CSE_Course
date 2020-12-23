@@ -62,7 +62,7 @@ public class L1T3 extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view1= getLayoutInflater().inflate(R.layout.simple_row,null);
-            TextView textView=view1.findViewById(R.id.row_ID);
+            TextView textView=view1.findViewById(R.id.row2_ID);
             textView.setText(Word[position]);
             return view1;
         }
