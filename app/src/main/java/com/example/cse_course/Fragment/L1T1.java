@@ -1,11 +1,8 @@
 package com.example.cse_course.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +12,10 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.cse_course.HomePage;
 import com.example.cse_course.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
 
 public class L1T1 extends Fragment{
@@ -28,8 +23,6 @@ public class L1T1 extends Fragment{
     final String[] Title={"Discrete Mathematics","Data Structures","Digital Logic","Theory Computing"};
     ImageView imageView;
     GridView gridView;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,12 +42,8 @@ public class L1T1 extends Fragment{
                 startActivity(new  Intent(getActivity(), HomePage.class));
             }
         });
-
-
         return view;
-
     }
-
     private class CustomAdapter  extends BaseAdapter {
         @Override
         public int getCount() {
@@ -81,8 +70,6 @@ public class L1T1 extends Fragment{
             return view1;
         }
     }
-
-
 //    @Override
 //    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 //        if(item.getItemId()== android.R.id.home) {
