@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name">CSE_Course</string>
     <string name="marque">Department of computer science and engineering</string>
-    <string name="if_you_do_not_sin_up_then_click">If you do not sin up then click</string>
+    <string name="if_you_do_not_sin_up_then_click">If you do not SignUp then click</string>
     <string name="if_you_are_registered_then_click">If you are registered then click!!</string>
     <string name="login">Login</string>
-    <string name="sinup">Sinup</string>
+    <string name="sinup">SignUp</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="home">Home</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="daffodil_international_university">Daffodil International University</string>
-    <string name="app_developer_tanvir_zaman_prince">App Developer : Tanvir Zaman Prince</string>
+    <string name="app_developer_tanvir_zaman_prince">Department : Computer Science and Engneering</string>
     <string name="about">About</string>
     <string name="contract">Contract</string>
     <string name="share">Share</string>
@@ -41,7 +41,7 @@
         <item>CSE891</item>
         <item>CSE912</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tanvir">Tanvir</string>
 
