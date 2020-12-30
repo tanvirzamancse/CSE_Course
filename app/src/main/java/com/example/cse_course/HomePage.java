@@ -70,15 +70,15 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position==0){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L1T1 l1T1=new L1T1();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l1T1).addToBackStack(null).commit();
-
+                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+                    intent.putExtra("Position",+0);
+                    startActivity(intent);
                 }
                 if (position==1){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L1T2 l1T2=new L1T2();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l1T2).addToBackStack(null).commit();
+                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+                    intent.putExtra("Position",""+1);
+                    startActivity(intent);
+
 
                 }
                 if (position==2){
