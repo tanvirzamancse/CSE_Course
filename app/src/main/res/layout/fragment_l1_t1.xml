@@ -34,7 +34,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <GridView
-        android:id="@+id/listID"
+        android:id="@+id/gridID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:verticalSpacing="4sp"

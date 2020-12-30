@@ -46,7 +46,7 @@ public class L1T1 extends Fragment{
         View view= inflater.inflate(R.layout.fragment_l1_t1, container, false);
        // ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView=view.findViewById(R.id.viewID);
-        gridView= view.findViewById(R.id.listID);
+        gridView= view.findViewById(R.id.gridID);
 
         databaseReference=FirebaseDatabase.getInstance().getReference("Course").child("L1T1");
         modelClassList=new ArrayList<>();

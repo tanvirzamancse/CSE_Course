@@ -37,13 +37,9 @@ import com.google.android.material.navigation.NavigationView;
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private GridView gridView;
     private String[] Semister;
-
-
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,12 +47,12 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         gridView=findViewById(R.id.gridID);
+
         drawerLayout=findViewById(R.id.drawerId);
         navigationView=findViewById(R.id.navigationViewID);
         navigationView.setNavigationItemSelectedListener(this);
         Toolbar toolbar=findViewById(R.id.toolberID);
         setSupportActionBar(toolbar);
-
         toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.setDrawerIndicatorEnabled(true);
@@ -69,73 +65,76 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position==0){
-                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
-                    intent.putExtra("Position",+0);
-                    startActivity(intent);
-                }
-                if (position==1){
-                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
-                    intent.putExtra("Position",""+1);
-                    startActivity(intent);
 
+                Intent intent=new Intent(HomePage.this,MainActivity2.class);
+                intent.putExtra("position",position);
+                startActivity(intent);
 
-                }
-                if (position==2){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L1T3 l1T3=new L1T3();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l1T3).addToBackStack(null).commit();
-                }
-                if (position==3){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L2T1 l2T1=new L2T1();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l2T1).addToBackStack(null).commit();
-                }
-                if (position==4){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L2T2 l2T2=new L2T2();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l2T2).addToBackStack(null).commit();
-                }
-                if (position==5){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L2T3 l2T3=new L2T3();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l2T3).addToBackStack(null).commit();
-                }
-                if (position==6){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L3T1 l3T1=new L3T1();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l3T1).addToBackStack(null).commit();
-                }
-                if (position==7){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L3T2 l3T2=new L3T2();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l3T2).addToBackStack(null).commit();
-                }
-                if (position==8){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L3T3 l3T3=new L3T3();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l3T3).addToBackStack(null).commit();
-                }
-                if (position==9){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L4T1 l4T1=new L4T1();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l4T1).addToBackStack(null).commit();
-                }
-                if (position==10){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L4T2 l4T2=new L4T2();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l4T2).addToBackStack(null).commit();
-                }
-                if (position==11){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L4T3 l4T3=new L4T3();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l4T3).addToBackStack(null).commit();
-                }
-                if (position==12){
-                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                    L1T2 l1T2=new L1T2();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l1T2).addToBackStack(null).commit();
-                }
+//                if (position==0){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==1){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==2){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==3){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==4){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==5){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+////                    AppCompatActivity activity=(AppCompatActivity)view.getContext();
+////                    L2T3 l2T3=new L2T3();
+////                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.drawerId,l2T3).addToBackStack(null).commit();
+//                }
+//                if (position==6){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==7){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==8){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==9){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==10){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//                }
+//                if (position==11){
+//                    Intent intent=new Intent(HomePage.this,MainActivity2.class);
+//                    intent.putExtra("position",position);
+//                    startActivity(intent);
+//
+//                }
+
             }
         });
     }
