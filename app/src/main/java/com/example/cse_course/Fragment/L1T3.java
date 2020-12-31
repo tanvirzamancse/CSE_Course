@@ -1,5 +1,6 @@
 package com.example.cse_course.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,12 +33,12 @@ import java.util.List;
 
 
 public class L1T3 extends Fragment {
-//    final String[] Word={"CSE123:sadhjsdhsd","CSE234:dsfjkdfjkf","CSE:sdfjdsf","CSE:sdfjsdfhf",};
     ImageView imageView;
     GridView gridView;
     DatabaseReference databaseReference;
     private List<ModelClass> modelClassList;
-   CustomAdapter customAdapter;
+    CustomAdapter customAdapter;
+    ProgressDialog progressDialog;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,21 +46,25 @@ public class L1T3 extends Fragment {
 
         imageView=view.findViewById(R.id.imageviewID);
         gridView= view.findViewById(R.id.GridView);
-        databaseReference= FirebaseDatabase.getInstance().getReference("Course").child("L1T3");
+        progressDialog=new ProgressDialog(getActivity());
+
+        databaseReference=FirebaseDatabase.getInstance().getReference("Course").child("L1T3");
         modelClassList=new ArrayList<>();
         customAdapter = new CustomAdapter(L1T3.this.getActivity(), modelClassList);
-//        CustomAdapter customAdapter=new CustomAdapter();
-//        gridView.setAdapter(customAdapter);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), HomePage.class));
+                startActivity(new  Intent(getActivity(), HomePage.class));
             }
         });
         return view;
     }
     @Override
     public void onStart() {
+        progressDialog.setMessage("Fatching Course");
+        progressDialog.show();
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -70,6 +75,7 @@ public class L1T3 extends Fragment {
                 }
                 gridView.setAdapter(customAdapter);
                 customAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -78,8 +84,7 @@ public class L1T3 extends Fragment {
         });
         super.onStart();
     }
-
-    private class CustomAdapter extends ArrayAdapter<ModelClass> {
+    private class CustomAdapter extends ArrayAdapter<ModelClass>{
         private Context context;
         private List<ModelClass> modelClassList;
 
@@ -106,28 +111,5 @@ public class L1T3 extends Fragment {
             return view1;
         }
     }
-//    private class CustomAdapter  extends BaseAdapter {
-//        @Override
-//        public int getCount() {
-//            return Word.length;
-//        }
-//
-//        @Override
-//        public Object getItem(int position) {
-//            return null;
-//        }
-//
-//        @Override
-//        public long getItemId(int position) {
-//            return 0;
-//        }
-//
-//        @Override
-//        public View getView(int position, View convertView, ViewGroup parent) {
-//            View view1= getLayoutInflater().inflate(R.layout.simple_row,null);
-//            TextView textView=view1.findViewById(R.id.row2_ID);
-//            textView.setText(Word[position]);
-//            return view1;
-//        }
     }
 

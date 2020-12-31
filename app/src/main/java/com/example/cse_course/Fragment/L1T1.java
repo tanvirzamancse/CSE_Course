@@ -1,5 +1,6 @@
 package com.example.cse_course.Fragment;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.cse_course.HomePage;
 import com.example.cse_course.MainActivity2;
@@ -30,7 +32,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class L1T1 extends Fragment{
 //    final String[] Code={"CSE131","CSE133","CSE212","CSE221"};
 //    final String[] Title={"Discrete Mathematics","Data Structures","Digital Logic","Theory Computing"};
@@ -39,14 +40,15 @@ public class L1T1 extends Fragment{
     DatabaseReference databaseReference;
     private List<ModelClass> modelClassList;
     CustomAdapter customAdapter;
-
+    ProgressDialog progressDialog;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_l1_t1, container, false);
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,
+                             Bundle savedInstanceState){
+        View view= inflater.inflate(R.layout.fragment_l1_t1, container,false);
        // ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView=view.findViewById(R.id.viewID);
         gridView= view.findViewById(R.id.gridID);
+        progressDialog=new ProgressDialog(getActivity());
 
         databaseReference=FirebaseDatabase.getInstance().getReference("Course").child("L1T1");
         modelClassList=new ArrayList<>();
@@ -61,25 +63,26 @@ public class L1T1 extends Fragment{
         });
         return view;
     }
-
 //    @Override
 //    public void onAttach(@NonNull Context context) {
 //        super.onAttach(context);
 //        this.context=context;
 //    }
-
     @Override
     public void onStart() {
+        progressDialog.setMessage("Fatching Course");
+        progressDialog.show();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 modelClassList.clear();
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     ModelClass modelClass=dataSnapshot.getValue(ModelClass.class);
                     modelClassList.add(modelClass);
                 }
                 gridView.setAdapter(customAdapter);
                 customAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -88,7 +91,6 @@ public class L1T1 extends Fragment{
         });
         super.onStart();
     }
-
     private class CustomAdapter extends ArrayAdapter<ModelClass>{
         private Context context;
         private List<ModelClass> modelClassList;
@@ -116,14 +118,11 @@ public class L1T1 extends Fragment{
             return view1;
         }
     }
-
-
 //    private class CustomAdapter  extends BaseAdapter {
 //        @Override
 //        public int getCount() {
 //            return Code.length;
 //        }
-//
 //        @Override
 //        public Object getItem(int position) {
 //            return null;
@@ -151,7 +150,4 @@ public class L1T1 extends Fragment{
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
-
-
-
 }

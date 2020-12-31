@@ -33,7 +33,6 @@ import com.example.cse_course.Fragment.L4T1;
 import com.example.cse_course.Fragment.L4T2;
 import com.example.cse_course.Fragment.L4T3;
 import com.google.android.material.navigation.NavigationView;
-
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private GridView gridView;
     private String[] Semister;
