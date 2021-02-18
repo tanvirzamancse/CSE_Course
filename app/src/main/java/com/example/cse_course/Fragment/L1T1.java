@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
@@ -20,10 +21,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.cse_course.HomePage;
 import com.example.cse_course.MainActivity2;
 import com.example.cse_course.ModelClass;
 import com.example.cse_course.R;
+import com.example.cse_course.ShowCourseData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,6 +54,18 @@ public class L1T1 extends Fragment{
         gridView= view.findViewById(R.id.gridID);
         progressDialog=new ProgressDialog(getActivity());
 
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position==0){
+                    Intent intent=new Intent(getContext(), ShowCourseData.class);
+                    startActivity(intent);
+                    Toast.makeText(getActivity(), "hi", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         databaseReference=FirebaseDatabase.getInstance().getReference("Course").child("L1T1");
         modelClassList=new ArrayList<>();
         customAdapter = new CustomAdapter(L1T1.this.getActivity(), modelClassList);
@@ -62,6 +78,7 @@ public class L1T1 extends Fragment{
             }
         });
         return view;
+
     }
 //    @Override
 //    public void onAttach(@NonNull Context context) {
