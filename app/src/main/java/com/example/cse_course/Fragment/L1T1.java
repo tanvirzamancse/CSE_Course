@@ -58,11 +58,11 @@ public class L1T1 extends Fragment{
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position==0){
-                    Intent intent=new Intent(getContext(), ShowCourseData.class);
-                    startActivity(intent);
-                    Toast.makeText(getActivity(), "hi", Toast.LENGTH_SHORT).show();
-                }
+
+                Intent intent=new Intent(getContext(), ShowCourseData.class);
+                intent.putExtra("position",position);
+                startActivity(intent);
+
             }
         });
 

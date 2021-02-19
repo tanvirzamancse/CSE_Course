@@ -9,13 +9,71 @@
     android:background="#4fa2d2"
     tools:context=".ShowCourseData">
 
-    <ListView
-        android:id="@+id/listID"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolberID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10sp"
-        android:dividerHeight="1sp"
-        android:layout_margin="20sp"
-        android:divider="@color/blue"/>
+        android:background="#0560CC"
+        >
+        <ImageView
+            android:id="@+id/IviewID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:onClick="Back"/>
+
+        <TextView
+            android:id="@+id/textID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="File"
+            android:layout_marginStart="35sp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pdf Files"
+        android:textSize="30sp"
+        android:textColor="#CA0E0E"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:padding="5sp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15sp"
+        android:elevation="5sp"
+        android:padding="5sp"
+        android:layout_margin="10sp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0D8FDA">
+            <ListView
+                android:id="@+id/listID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20sp"
+                android:divider="#0D8FDA"
+                android:dividerHeight="5sp"
+                />
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
 
 </LinearLayout>
