@@ -154,27 +154,25 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                     " adding classes entered by other users.", Toast.LENGTH_LONG).show();
             break;
         case R.id.Contact:
-            Toast.makeText(this, "Name: Md.Musaddikul islam Mishon\n" +
+            Toast.makeText(this, "Name: Md.Musaddikul islam Mishon\n"+
                     "Id: 171-15-9127\n" +
                     "Email: musaddikul15-9127@diu.edu.bd\n" +
                     "Phone: 01842020064\n" +
                     "Name: Md.Juavaraj Nilay\n" +
                     "Id: 171-15-8967\n" +
                     "Email: juvaraj15-8967@diu.edu.bd\n" +
-                    "Phone: 01967478801\n" +
                     "Name: Manira Afruz\n" +
                     "Id: 171-15-9161\n" +
-                    "Email: manira15-9161@diu.edu.bd\n" +
-                    "Phone: 01768189752", Toast.LENGTH_LONG).show();
+                    "Email: manira15-9161@diu.edu.bd\n", Toast.LENGTH_LONG).show();
             break;
         case R.id.Share:
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.learn_english_in_bangla&hl=en");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps");
             startActivity(Intent.createChooser(shareIntent, "Share..."));
             break;
         case R.id.Rating:
-            Uri uri=Uri.parse("https://play.google.com/store/apps/details?id=com.learn_english_in_bangla&hl=en");
+            Uri uri=Uri.parse("https://play.google.com/store/apps");
             Intent i=new Intent(Intent.ACTION_VIEW,uri);
             startActivity(i);
             break;
